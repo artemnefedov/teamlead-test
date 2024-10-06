@@ -32,6 +32,12 @@
         <resource type="download" name="tutorial.css" location="/css/tutorial.css"/>
         <resource type="download" name="tutorial.js" location="/js/tutorial.js"/>
 
+        <dependency>com.atlassian.auiplugin:aui-dropdown2</dependency>
+        <dependency>com.atlassian.auiplugin:aui-experimental-iconfont</dependency>
+        <dependency>com.atlassian.auiplugin:aui-select2</dependency>
+        <dependency>com.atlassian.auiplugin:aui-dialog2</dependency>
+        <resource type="download" name="stage.js" location="/js/stage.js"/>
+
         <!--путь к рисункам-->
         <resource type="download" name="images/" location="/images"/>
 
@@ -285,4 +291,19 @@
 
         <resource type="download" name="products-thumb.png" location="images/products-thumb.png"/>
     </gadget>
+
+    <!-- All my changes are below   -->
+    <ao key="ao-module">
+        <description>Module adding Active Objects, for stages</description>
+        <entity>ru.teamlead.jira.plugins.tutorial.ao.StageItem</entity>
+    </ao>
+
+    <web-panel key="Stage dropdown" location="atl.jira.view.issue.right.context" weight="100">
+        <context-provider class="ru.teamlead.jira.plugins.tutorial.context.StageDropdownContext"/>
+        <resource type="velocity" name="view" location="templates/stage-dropdown.vm"/>
+    </web-panel>
+
+    <rest key="stage-rest" path="stage-rest" version="1.0" name="Stage Rest">
+        <description>Provides rest services for stages</description>
+    </rest>
 </atlassian-plugin>

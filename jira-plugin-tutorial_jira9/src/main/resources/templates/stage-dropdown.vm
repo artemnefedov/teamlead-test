@@ -1,0 +1,39 @@
+<button class="aui-button aui-dropdown2-trigger" aria-controls="stages-dropdown">
+    Dropdown menu
+</button>
+
+<aui-dropdown-menu id="stages-dropdown">
+    <aui-section label="Stage">
+    #foreach($stage in $stages)
+        <aui-item-checkbox interactive><span class="aui-icon aui-icon-small aui-iconfont-emoji">Insert meaningful text here for accessibility</span>
+    $stage.num - $stage.name </aui-item-checkbox>
+    #end
+    </aui-section>
+</aui-dropdown-menu>
+
+<button id="stage-dialog-show-button" class="aui-button"> What??</button>
+
+<section
+    id="stage-dialog"
+    class="aui-dialog2 aui-dialog2-small aui-layer"
+    role="dialog"
+    tabindex="-1"
+    aria-modal="true"
+    aria-labelledby="dialog-show-button--heading"
+    aria-describedby="dialog-show-button--description"
+    hidden
+>
+    <header class="aui-dialog2-header">
+        <h1 class="aui-dialog2-header-main" id="dialog-show-button--heading">Oh, by the way!</h1>
+    </header>
+    <div class="aui-dialog2-content" id="dialog-show-button--description">
+        <p>The stages of acceptance, often referred to in the context of grief,
+        are commonly known as the Five Stages of Grief. These stages were first
+        introduced by Elisabeth Kübler-Ross in her book “On Death and Dying.” :'(</p>
+    </div>
+    <footer class="aui-dialog2-footer">
+        <div class="aui-dialog2-footer-actions">
+            <button id="dialog-submit-button" class="aui-button aui-button-primary">okay</button>
+        </div>
+    </footer>
+</section>
