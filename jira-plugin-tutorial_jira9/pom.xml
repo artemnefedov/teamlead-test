@@ -430,7 +430,7 @@
         <atlassian.selenium.version>2.0</atlassian.selenium.version>
         <streams.version>5.1.m3</streams.version>
         <rest.version>2.8.0-m8</rest.version>
-        <scala.version>2.10.3</scala.version>
+        <scala.version>2.10.7</scala.version>
         <scala.version.base>2.10</scala.version.base>
     </properties>
 </project>
