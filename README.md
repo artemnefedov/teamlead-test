@@ -12,7 +12,7 @@
 
 
 ### AUI-Dialog2
-![img_1.png](img_1.png)
+![video](Kooha-2024-10-07-14-10-56.gif)
 
 ### fixed POST call in rest-controller
 ![img_3.png](img_3.png)
