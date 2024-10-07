@@ -30,8 +30,11 @@ public class StageDropdownContext extends AbstractJiraContextProvider {
     }
 
     public static class StageItemDto {
-        private final int num;
-        private final String name;
+        private int num;
+        private String name;
+
+        public StageItemDto() {
+        }
 
         public StageItemDto(int num, String name) {
             this.num = num;
@@ -45,5 +48,7 @@ public class StageDropdownContext extends AbstractJiraContextProvider {
         public String getName() {
             return name;
         }
+
+
     }
 }

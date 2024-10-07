@@ -14,6 +14,10 @@
 ### AUI-Dialog2
 ![img_1.png](img_1.png)
 
+### fixed POST call in rest-controller
+![img_3.png](img_3.png)
+![img_4.png](img_4.png)
+
 ## 2. Class Diagram
 ### 2.1.  UML class diagram
 > The `Class_Diagram.puml` file is available in the root of the repository

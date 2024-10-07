@@ -3,8 +3,10 @@ package ru.teamlead.jira.plugins.tutorial.rest;
 import com.atlassian.activeobjects.external.ActiveObjects;
 import com.atlassian.plugins.rest.common.security.AnonymousAllowed;
 import ru.teamlead.jira.plugins.tutorial.ao.StageItem;
+import ru.teamlead.jira.plugins.tutorial.context.StageDropdownContext;
 
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -41,11 +43,12 @@ public class StageRest {
     }
 
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addStage(StageItem stageItem) {
+    public Response addStage(StageDropdownContext.StageItemDto stageItemDto) {
         StageItem newStage = ao.create(StageItem.class);
-        newStage.setNum(stageItem.getNum());
-        newStage.setName(stageItem.getName());
+        newStage.setNum(stageItemDto.getNum());
+        newStage.setName(stageItemDto.getName());
         newStage.save();
         return Response.ok().build();
     }
