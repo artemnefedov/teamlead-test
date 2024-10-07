@@ -2,6 +2,8 @@
 
 ## 1. plug-in update for Jira
 > I'll add the assembled plugin `jira-plugin-tutorial-1.0.0.jar` to the `jira-plugin-tutorial_jira9` folder
+>
+> A [commit](https://github.com/artemnefedov/teamlead-test/commit/31157c56b32cf519d4e5dfd5a5c786fbf0ea5979) that contains all the changes for a task.
  
 ![img_2.png](img_2.png)
 
