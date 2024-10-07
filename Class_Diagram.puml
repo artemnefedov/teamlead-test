@@ -1,0 +1,56 @@
+@startuml
+interface LibraryItem{
+  +getDetails(): String
+  +isAvailable(): boolean
+}
+
+class Book implements LibraryItem{
+  -ISBN: String
+  -title: String
+  -author: String
+  -publicationDate: Date
+  -genres: String[]
+  +getDetails(): String
+  +isAvailable(): boolean
+}
+
+class Member{
+  -name: String
+  -contactInfo: String
+  -membershipId: String
+  -borrowedBooks: Borrowing[]
+  +borrowBook(item: LibraryItem): Borrowing
+  +returnBook(item: LibraryItem): void
+}
+
+class Borrowing{
+  -item: LibraryItem
+  -member: Member
+  -borrowDate: Date
+  -dueDate: Date
+  +borrow(): void
+  +return(): void
+}
+
+class Library{
+  -items: Set<LibraryItem>
+  -members: Set<Member>
+  -transactions: List<Borrowing>
+  +addItem(item: LibraryItem): void
+  +registerMember(member: Member): void
+}
+
+interface IReminderService{
+  +sendReminder(member: Member): void
+}
+
+class ReminderService implements IReminderService{
+  +sendReminder(member: Member): void
+}
+
+Library "1" --> "n" LibraryItem
+Library "1" --> "n" Member
+Member "1" -> "*" Borrowing
+LibraryItem "1" --> "*" Borrowing
+Library --> IReminderService
+@enduml
